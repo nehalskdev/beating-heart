@@ -1,0 +1,43 @@
+body {
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+.heart {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  transform: rotate(225deg);
+  margin: 50px;
+  animation: beat 1s infinite ease-in-out;
+}
+
+.heart::before,
+.heart::after {
+  content: "";
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  border-radius: 50%;
+}
+
+.heart::before {
+  top: 50px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 50px;
+}
+
+@keyframes beat {
+  0% {
+    scale: 0.5;
+  }
+  50% {
+    scale: 1.3;
+  }
+}
